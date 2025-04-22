@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    --primary: 348 100% 35%;  /* #B40039 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 348 100% 35%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    scroll-behavior: smooth;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl px-4 mx-auto sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold mb-8 text-center md:text-4xl lg:text-5xl;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
+
+/* Estilos para el carrusel con flechas completamente fuera de las cards */
+.portfolio-swiper .swiper-button-next,
+.portfolio-swiper .swiper-button-prev {
+  color: #B40039 !important;
+  background-color: white !important;
+  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Posicionando la flecha derecha fuera de las cards */
+.portfolio-swiper .swiper-button-next {
+  right: -60px !important;
+}
+
+/* Posicionando la flecha izquierda fuera de las cards */
+.portfolio-swiper .swiper-button-prev {
+  left: -60px !important;
+}
+
+.portfolio-swiper .swiper-button-next:after,
+.portfolio-swiper .swiper-button-prev:after {
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+.portfolio-swiper .swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  opacity: 0.6 !important;
+  background-color: #cccccc !important;
+  margin: 0 5px !important;
+  transition: all 0.3s ease !important;
+}
+
+.portfolio-swiper .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background-color: #B40039 !important;
+  transform: scale(1.2) !important;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  bottom: 0 !important;
+  margin-top: 20px !important;
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+/* Ajustes para móviles - ocultar flechas en pantallas pequeñas */
+@media (max-width: 1200px) {
+  .portfolio-swiper .swiper-button-next,
+  .portfolio-swiper .swiper-button-prev {
+    display: none !important;
+  }
+}
