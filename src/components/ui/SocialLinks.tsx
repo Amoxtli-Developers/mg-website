@@ -1,27 +1,17 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Facebook, Instagram, Twitter, Linkedin, X, UserRoundSearch } from 'lucide-react';
+import { Search, Linkedin, X, Globe } from 'lucide-react';
 
 const socialLinks = [
   {
-    name: 'Facebook',
-    url: 'https://facebook.com',
-    icon: <Facebook size={18} />,
-  },
-  {
-    name: 'Instagram',
-    url: 'https://instagram.com',
-    icon: <Instagram size={18} />,
-  },
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com',
-    icon: <Twitter size={18} />,
+    name: 'Google',
+    url: 'https://www.google.com/maps?rlz=1C5CHFA_enMX1166MX1166&um=1&ie=UTF-8&fb=1&gl=mx&sa=X&geocode=KTXO2m-X_9GFMZxHLlmL5ixV&daddr=Av.+Coyoacan+1435,+Centro+Urbano+Presidente,+Miguel+Aleman+Edificio+H,+Avenida,+del+Valle,+03100+Ciudad+de+M%C3%A9xico,+CDMX',
+    icon: <Search size={18} />,
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com',
+    url: 'https://www.linkedin.com/company/mg-servicio-inmobiliario/posts/?feedView=all',
     icon: <Linkedin size={18} />,
   },
 ];
@@ -49,7 +39,7 @@ export default function SocialLinks() {
         {isOpen ? (
           <X size={20} className="sm:h-6 sm:w-6" />
         ) : (
-          <UserRoundSearch size={20} className="sm:h-6 sm:w-6" />
+          <Globe size={20} className="sm:h-6 sm:w-6" />
         )}
       </motion.button>
 
@@ -69,8 +59,8 @@ export default function SocialLinks() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white border border-gray-200 rounded-full shadow-lg text-gray-600 hover:text-brand-primary transition-colors"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: 1, 
+                animate={{
+                  opacity: 1,
                   y: 0,
                   transition: { delay: index * 0.1 }
                 }}
