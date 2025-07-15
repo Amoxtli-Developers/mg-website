@@ -44,22 +44,21 @@ export const metadata = {
     },
 };
 
-export const viewport = {
-    themeColor: '#B40039',
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-};
-
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
-        <html lang="es" className={`${inter.variable} scroll-smooth`}>
-            <body className="min-h-screen bg-background font-sans antialiased overflow-x-hidden">
+        <html lang="es">
+            <head>
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+				/>
+			</head>
+            <body>
                 <Providers>
                     <PrivacyPolicyProvider>
-                        <div className="flex flex-col min-h-screen overflow-x-hidden">
+                        <div>
                             <Header />
-                            <main className="flex-1">{children}</main>
+                            <main>{children}</main>
                             <Footer />
                             <WhatsAppButton />
                             <SocialLinks />
