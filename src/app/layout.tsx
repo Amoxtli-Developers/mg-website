@@ -46,27 +46,19 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
-        <html lang="es">
-            <head>
-				<meta
-					name="viewport"
-					content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
-				/>
-			</head>
-            <body>
+        <html lang="es" className={`${inter.variable} scroll-smooth`}>
+            <body className="min-h-screen bg-background font-sans antialiased overflow-x-hidden">
                 <Providers>
                     <PrivacyPolicyProvider>
-                        <div>
-                            <Header />
-                            <main>{children}</main>
-                            <Footer />
-                            <WhatsAppButton />
-                            <SocialLinks />
-                            <PrivacyPolicyDialog />
-                        </div>
+                        <Header />
+                        <main className="flex-1">{children}</main>
+                        <Footer />
+                        <WhatsAppButton />
+                        <SocialLinks />
+                        <PrivacyPolicyDialog />
                     </PrivacyPolicyProvider>
                 </Providers>
             </body>
         </html>
-    );
+    )
 }
