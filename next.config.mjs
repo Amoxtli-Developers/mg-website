@@ -2,8 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'standalone',
   images: {
-    domains: ['placeholder.com'],
+    domains: ['placeholder.com', 'via.placeholder.com'],
+    unoptimized: false,
+  },
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
   },
   webpack(config) {
     // Configuración para importar SVG como componentes React

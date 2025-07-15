@@ -15,6 +15,14 @@ const PrivacyPolicyContext = createContext<PrivacyPolicyContextType | undefined>
 export const usePrivacyPolicy = () => {
   const context = useContext(PrivacyPolicyContext);
   if (context === undefined) {
+    // En lugar de lanzar error durante SSR, retorna valores por defecto
+    if (typeof window === 'undefined') {
+      return {
+        isPrivacyPolicyOpen: false,
+        openPrivacyPolicy: () => {},
+        closePrivacyPolicy: () => {},
+      };
+    }
     throw new Error('usePrivacyPolicy debe ser usado dentro de un PrivacyPolicyProvider');
   }
   return context;

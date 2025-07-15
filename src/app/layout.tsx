@@ -16,6 +16,7 @@ const inter = Inter({
 });
 
 export const metadata = {
+    metadataBase: new URL(process.env.NEXTAUTH_URL || 'https://mgservicioinmobiliario.com'),
     title: 'MG Servicio Inmobiliario | Expertos en Propiedades en México',
     description: 'Empresa especializada en propiedades inmobiliarias con más de 40 años de experiencia en el mercado mexicano. Asesoramiento para compra, venta y renta de propiedades.',
     keywords: 'inmobiliaria, propiedades, bienes raíces, casas en venta, departamentos en renta, servicios inmobiliarios, asesores inmobiliarios',
@@ -28,7 +29,7 @@ export const metadata = {
     openGraph: {
         title: 'MG Servicio Inmobiliario | Expertos en Propiedades en México',
         description: 'Empresa especializada en propiedades inmobiliarias con más de 40 años de experiencia en el mercado mexicano.',
-        url: 'https://mgservicioinmobiliario.com',
+        url: '/',
         siteName: 'MG Servicio Inmobiliario',
         locale: 'es_MX',
         type: 'website',

@@ -1,4 +1,3 @@
-'use client';
 import ServicesSection from '@/components/sections/ServicesSection';
 import AboutSection from '@/components/sections/AboutSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
@@ -6,22 +5,9 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import HeroSection from '@/components/sections/HeroSection';
 import JsonLd from '@/components/ui/JsonLd';
-import { useGetPropertiesQuery } from '@/store/propertiesApi';
+import ClientPortfolio from '@/components/ClientPortfolio';
 
 export default function Home() {
-    const { data: properties = [], isLoading, error } = useGetPropertiesQuery()
-
-    // opcional: mostrar spinner o mensaje
-    if (isLoading) {
-        return (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
-                <div
-                    className="h-16 w-16 border-4 border-brand-primary border-t-transparent rounded-full animate-spin"
-                    aria-label="Loading spinner"
-                />
-            </div>
-        );
-    }
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "RealEstateAgent",
@@ -58,11 +44,7 @@ export default function Home() {
             <HeroSection />
             <AboutSection />
             <ServicesSection />
-            {error ? (
-            <p></p>
-            ) : (
-            <PortfolioSection properties={properties} />
-            )}
+            <ClientPortfolio />
             <TestimonialsSection />
             <ContactSection />
         </>
