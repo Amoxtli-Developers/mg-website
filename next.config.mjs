@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  output: 'standalone',
   images: {
     domains: ['placeholder.com', 'via.placeholder.com'],
     unoptimized: false,
@@ -10,7 +9,7 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
-  webpack(config) {
+  webpack(config, { isServer }) {
     // Configuración para importar SVG como componentes React
     config.module.rules.push({
       test: /\.svg$/,
@@ -32,6 +31,16 @@ const nextConfig = {
         },
       }],
     });
+
+    // Optimize packages for client-side
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      };
+    }
 
     return config;
   },
