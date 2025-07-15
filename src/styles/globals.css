@@ -13,7 +13,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 5%;
 
-    --primary: 348 100% 35%;  /* #B40039 */
+    --primary: 348 100% 35%;
+    /* #B40039 */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
@@ -40,12 +41,12 @@
   * {
     @apply border-border;
   }
-  
+
   body {
     @apply bg-background text-foreground overflow-x-hidden;
     scroll-behavior: smooth;
   }
-  
+
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -56,11 +57,11 @@
   .container {
     @apply max-w-7xl px-4 mx-auto sm:px-6 lg:px-8;
   }
-  
+
   .section-title {
     @apply text-3xl font-bold mb-8 text-center md:text-4xl lg:text-5xl;
   }
-  
+
   .section-padding {
     @apply py-16 md:py-24;
   }
@@ -124,8 +125,24 @@
 
 /* Ajustes para móviles - ocultar flechas en pantallas pequeñas */
 @media (max-width: 1200px) {
+
   .portfolio-swiper .swiper-button-next,
   .portfolio-swiper .swiper-button-prev {
     display: none !important;
   }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #B40039 !important;
+}
+
+.swiper-pagination-bullet {
+  background: #cccccc !important;
+  opacity: 0.6 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #B40039 !important;
+  opacity: 1 !important;
 }

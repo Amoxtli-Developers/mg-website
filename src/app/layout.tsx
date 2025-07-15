@@ -54,27 +54,6 @@ export const viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="es" className={`${inter.variable} scroll-smooth`}>
-            <head>
-                {/* Estilos para Swiper */}
-                <style>
-                    {`
-          /* Sobrescribir por completo los estilos de Swiper */
-          .swiper-button-next, .swiper-button-prev {
-            color: #B40039 !important;
-          }
-          
-          .swiper-pagination-bullet {
-            background: #cccccc !important;
-            opacity: 0.6 !important;
-          }
-          
-          .swiper-pagination-bullet-active {
-            background: #B40039 !important;
-            opacity: 1 !important;
-          }
-          `}
-                </style>
-            </head>
             <body className="min-h-screen bg-background font-sans antialiased overflow-x-hidden">
                 <Providers>
                     <PrivacyPolicyProvider>
